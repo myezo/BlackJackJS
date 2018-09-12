@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<button id="image" onclick="showImage()">Click</button>
+	<button id="hit">Hit</button>
+	<button id="Stand">Stand</button>
+
+	<div id="wrapper">
+		<div id="dealer">
+			<div id="dealer">
+				<div id="dealer1"></div>
+				<div id="dealer2"></div>
+			</div>
+			<div id="player">
+				<div id="player1"></div>
+				<div id="player2"></div>
+			</div>
+		</div>
+	</div>
+	
+
+	<script type="text/javascript">
+
+		var theImages = new Array(); 
+		//var displayCards = new Array();
+
+		theImages[0] = 'images/2_of_clubs.png'
+		theImages[1] = 'images/2_of_diamonds.png'
+		theImages[2] = 'images/2_of_hearts.png'
+		theImages[3] = 'images/2_of_spades.png'
+		theImages[4] = 'images/3_of_clubs.png'
+		theImages[5] = 'images/3_of_diamonds.png'
+		theImages[6] = 'images/3_of_hearts.png'
+		theImages[7] = 'images/3_of_spades.png'
+		theImages[8] = 'images/4_of_clubs.png'
+		theImages[9] = 'images/4_of_diamonds.png'
+		theImages[10] = 'images/4_of_hearts.png'
+		theImages[11] = 'images/4_of_spades.png'
+		theImages[12] = 'images/5_of_clubs.png'
+		theImages[13] = 'images/5_of_diamonds.png'
+		theImages[14] = 'images/5_of_hearts.png'
+		theImages[15] = 'images/5_of_spades.png'
+		theImages[16] = 'images/6_of_clubs.png'
+		theImages[17] = 'images/6_of_diamonds.png'
+		theImages[18] = 'images/6_of_hearts.png'
+		theImages[19] = 'images/6_of_spades.png'
+		theImages[20] = 'images/7_of_clubs.png'
+		theImages[21] = 'images/7_of_diamonds.png'
+		theImages[22] = 'images/7_of_hearts.png'
+		theImages[23] = 'images/7_of_spades.png'
+		theImages[24] = 'images/8_of_clubs.png'
+		theImages[25] = 'images/8_of_diamonds.png'
+		theImages[26] = 'images/8_of_hearts.png'
+		theImages[27] = 'images/8_of_spades.png'
+		theImages[28] = 'images/9_of_clubs.png'
+		theImages[29] = 'images/9_of_diamonds.png'
+		theImages[30] = 'images/9_of_hearts.png'
+		theImages[31] = 'images/9_of_spades.png'
+		theImages[32] = 'images/10_of_clubs.png'
+		theImages[33] = 'images/10_of_diamonds.png'
+		theImages[34] = 'images/10_of_hearts.png'
+		theImages[35] = 'images/10_of_spades.png'
+		theImages[36] = 'images/jack_of_clubs.png'
+		theImages[37] = 'images/jack_of_diamonds.png'
+		theImages[38] = 'images/jack_of_hearts.png'
+		theImages[39] = 'images/jack_of_spades.png'
+		theImages[40] = 'images/queen_of_clubs.png'
+		theImages[41] = 'images/queen_of_diamonds.png'
+		theImages[42] = 'images/queen_of_hearts.png'
+		theImages[43] = 'images/queen_of_spades.png'
+		theImages[44] = 'images/king_of_clubs.png'
+		theImages[45] = 'images/king_of_diamonds.png'
+		theImages[46] = 'images/king_of_hearts.png'
+		theImages[47] = 'images/king_of_spades.png'
+		theImages[48] = 'images/ace_of_clubs.png'
+		theImages[49] = 'images/ace_of_diamonds.png'
+		theImages[50] = 'images/ace_of_hearts.png'
+		theImages[51] = 'images/ace_of_spades.png'
+
+
+		//var j = 0;
+		var p = theImages.length;
+		var preBuffer = new Array();
+		var imageCount = new Array();
+
+		function showImage(){
+			var imageNumber = 0;
+				for(imageNumber = 0; imageNumber < 3; imageNumber++){
+					var whichImage = Math.round(Math.random()*(p-1));
+					if(imageNumber == 0){
+						document.getElementById("dealer2").innerHTML='<img src="'+theImages[whichImage]+'">';
+						console.log("0");
+						}else if(imageNumber == 1){
+							document.getElementById("player1").innerHTML='<img src="'+theImages[whichImage]+'">';
+							console.log("1");
+						}else if(imageNumber == 2){
+							document.getElementById("player2").innerHTML='<img src="'+theImages[whichImage]+'">';
+							console.log("2");
+						}
+						console.log(imageNumber);
+						preBuffer[imageNumber] = new Image();
+						preBuffer.push(theImages[imageNumber]);
+
+					console.log(preBuffer);
+				}
+									
+			dealerSecondCard();
+		}
+
+
+		function dealerSecondCard(){
+			document.getElementById("dealer1").innerHTML="<img src='images/back.png' />";
+		}
+
+		
+		
+		
+	</script>
+
+</body>
+</html>
